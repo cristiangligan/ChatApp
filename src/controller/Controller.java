@@ -1,7 +1,10 @@
 package controller;
 
+import view.SignInScreen;
+
 public class Controller {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Controller controller = new Controller();
+        SignInScreen signInScreen = new SignInScreen(controller);
     }
 }
