@@ -13,14 +13,15 @@ public class Controller {
         signInScreen = new SignInScreen(this);
     }
 
-    public void handleGoToSignIn() {
+    //****** SIGN IN - START ******
+    public void handleSignIn() {
 
     }
 
     public void handleChooseProfilePic() {
         SwingUtilities.invokeLater(() -> {
             JFileChooser fileChooser = new JFileChooser();
-            fileChooser.setFileFilter(new FileNameExtensionFilter("Images", "jpg", "jpeg", "png", "gif", "bmp"));
+            fileChooser.setFileFilter(new FileNameExtensionFilter("Images", "jpg", "jpeg"));
             fileChooser.setAcceptAllFileFilterUsed(false);
             int option = fileChooser.showOpenDialog(null);
             if (option == JFileChooser.APPROVE_OPTION) {
@@ -33,7 +34,7 @@ public class Controller {
             }
         });
     }
-
+    //****** SIGN IN - END ******
     public static void main(String[] args) {
         Controller controller = new Controller();
     }

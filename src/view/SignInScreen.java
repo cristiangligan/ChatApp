@@ -4,9 +4,7 @@ import controller.Controller;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.font.TextAttribute;
 import java.net.URL;
-import java.util.Map;
 
 public class SignInScreen extends JFrame {
     private static final int FRAME_WIDTH = 280;
@@ -68,21 +66,6 @@ public class SignInScreen extends JFrame {
 
     private void onChooseProfileBtnClick() {
         controller.handleChooseProfilePic();
-    }
-
-    private void onHoverSignUp() {
-        Font btnFont = btnGoToSignIn.getFont();
-        Map attributes = btnFont.getAttributes();
-        if (btnGoToSignIn.getModel().isRollover()) {
-
-            attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
-            btnGoToSignIn.setForeground(Color.BLUE);
-        } else {
-            attributes.put(TextAttribute.UNDERLINE, null);
-            btnGoToSignIn.setForeground(Color.BLACK);
-        }
-        btnFont = btnFont.deriveFont(attributes);
-        btnGoToSignIn.setFont(btnFont);
     }
 
     public void updateProfilePic(Icon profilePic) {
